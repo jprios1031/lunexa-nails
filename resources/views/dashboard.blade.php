@@ -23,8 +23,9 @@
         @if($reservas->isEmpty())
         <p>No hay reservas todavía.</p>
         @else
-        <div style="overflow-x:auto;">
-            <table border="1" cellpadding="10" cellspacing="0" style="width:100%; border-collapse:collapse; min-width:600px;">
+        <!-- Contenedor scrollable para móviles -->
+        <div style="overflow-x:auto; border:1px solid #ddd; border-radius:8px;">
+            <table style="width:100%; border-collapse:collapse; min-width:600px;">
                 <thead>
                     <tr style="background:#007BFF; color:white;">
                         <th>ID</th>
@@ -40,7 +41,7 @@
                 </thead>
                 <tbody>
                     @foreach($reservas as $reserva)
-                    <tr>
+                    <tr style="text-align:center;">
                         <td>{{ $reserva->id }}</td>
                         <td>{{ $reserva->nombre }}</td>
                         <td>{{ $reserva->email }}</td>
@@ -49,7 +50,7 @@
                         <td>{{ $reserva->fecha }}</td>
                         <td>{{ $reserva->hora }}</td>
                         <td>{{ $reserva->estado }}</td>
-                        <td style="display:flex; flex-wrap:wrap; gap:5px;">
+                        <td style="display:flex; flex-wrap:wrap; justify-content:center; gap:5px;">
                             @if($reserva->estado == 'Pendiente')
                             <form action="{{ route('reservas.aprobar', $reserva->id) }}" method="POST" style="display:inline-block;">
                                 @csrf
@@ -73,8 +74,19 @@
 </main>
 
 <style>
-    /* Responsivo para pantallas pequeñas */
-    @media (max-width: 600px) {
+    /* ======== Responsivo ======== */
+    @media (max-width: 768px) {
+        h2 {
+            font-size: 1.8em;
+        }
+
+        button {
+            padding: 6px 10px;
+            font-size: 12px;
+        }
+    }
+
+    @media (max-width: 480px) {
         h2 {
             font-size: 1.5em;
         }
@@ -82,13 +94,18 @@
         table,
         th,
         td {
-            font-size: 12px;
-            padding: 6px;
+            font-size: 11px;
+            padding: 4px;
+        }
+
+        td {
+            white-space: nowrap;
+            /* evita que el contenido se rompa */
         }
 
         button {
             padding: 4px 6px;
-            font-size: 11px;
+            font-size: 10px;
         }
     }
 </style>

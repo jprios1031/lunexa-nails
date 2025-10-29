@@ -39,7 +39,8 @@
             <input type="time" name="hora" step="3600" required>
             <p>
                 <strong>
- La hora debe ser en punto (ejemplo: 10:00, 11:00, 12:00)
+    La hora debe ser en punto
+    <br>(ejemplo: 10:00, 11:00, 12:00)
 </strong>
             </p>
 

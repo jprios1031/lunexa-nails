@@ -20,6 +20,7 @@ class ReservaController extends Controller
             'telefono' => 'required',
             'servicio' => 'required',
              'fecha' => 'required|date|after_or_equal:today',
+            'hora' => 'required|date_format:H:i',
         ]);
 
         Reserva::create($request->all());

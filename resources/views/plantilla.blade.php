@@ -18,7 +18,10 @@
             display: flex;
             flex-direction: column;
         }
-
+p{
+    text-content: center;
+}
+    
         @keyframes gradientBG {
             0% {
                 background-position: 0% 50%;

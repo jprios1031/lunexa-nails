@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('titulo') - LUNEXA NAILS</title>
     <style>
-        /* === Transición de fondo suave: rosa claro → blanco === */
+        /* === Fondo animado rosa suave === */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             min-height: 100vh;
@@ -43,14 +43,27 @@
             padding: 20px;
         }
 
-        /* Caja de login o contenido */
+        /* Caja de contenido */
         .login-box {
             background: rgba(255, 255, 255, 0.95);
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-            max-width: 500px;
             width: 100%;
+            max-width: 420px;
+            box-sizing: border-box;
+        }
+
+        /* Formularios */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #555;
         }
 
         input,
@@ -58,39 +71,44 @@
         button {
             width: 100%;
             padding: 12px;
-            margin: 8px 0;
             border-radius: 8px;
             border: 1px solid #ccc;
             font-size: 16px;
+            box-sizing: border-box;
+            transition: 0.3s ease;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: #ff69b4;
+            box-shadow: 0 0 6px rgba(255, 105, 180, 0.3);
         }
 
         button {
             background: #ff69b4;
-            /* rosa */
             color: white;
+            font-weight: bold;
             border: none;
             cursor: pointer;
-            transition: 0.3s;
         }
 
         button:hover {
             background: #ff1493;
-            /* rosa intenso al pasar el mouse */
-            color: white;
+            transform: scale(1.03);
         }
 
         /* Títulos */
         h1 {
             text-align: center;
-            font-size: 2.5em;
+            font-size: 2.3em;
             margin-bottom: 5px;
             color: #d63384;
-            /* rosa oscuro */
         }
 
         h3 {
             text-align: center;
-            font-size: 1.2em;
+            font-size: 1.1em;
             margin-bottom: 20px;
             color: #555;
         }
@@ -108,18 +126,26 @@
             margin: 5px 0;
         }
 
-        /* Responsivo */
+        /* Responsividad */
         @media (max-width: 600px) {
+            .login-box {
+                max-width: 90%;
+                padding: 20px;
+            }
+
             h1 {
-                font-size: 2em;
+                font-size: 1.8em;
             }
 
             h3 {
                 font-size: 1em;
             }
 
-            .login-box {
-                padding: 20px;
+            input,
+            button,
+            select {
+                font-size: 15px;
+                padding: 10px;
             }
         }
     </style>
@@ -127,7 +153,7 @@
 
 <body>
     <div class="container">
-        <!-- Encabezado con nombre y subtítulo -->
+        <!-- Encabezado -->
         <h1>LUNEXA NAILS</h1>
         <h3>Stefania Osorio</h3>
 
@@ -137,7 +163,7 @@
         </div>
     </div>
 
-    <!-- Footer con información -->
+    <!-- Footer -->
     <footer>
         <p>Manzana 2 Casa 5, Barrio Villa del Carmen, Cuba</p>
         <p>Tel: 3125433947</p>

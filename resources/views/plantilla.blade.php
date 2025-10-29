@@ -46,7 +46,7 @@
         /* Caja de login o contenido */
         .login-box {
             background: rgba(255, 255, 255, 0.95);
-            padding: 30px;
+            padding: 0px;
             border-radius: 15px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
             max-width: 500px;

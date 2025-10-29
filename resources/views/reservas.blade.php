@@ -49,11 +49,11 @@
         </form>
 
         <!-- Enlace para login del admin -->
-        <button style="margin-top:10px;>
+     
         <p style="margin-top:15px; text-align:center;">
-            <a href="{{ route('login') }}">Acceder como administrador</a>
+            <a href="{{ route('login') }}"><button style="margin-top:10px;>Acceder como administrador</button></a>
         </p>
-            </button>
+            
     </div>
 </main>
 @endsection

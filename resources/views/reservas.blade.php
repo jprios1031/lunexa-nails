@@ -32,7 +32,8 @@
             </select>
 
             <label>Fecha:</label>
-            <input type="date" name="fecha" required>
+<input type="date" name="fecha" min="{{ date('Y-m-d') }}" required>
+
 
             <label>Hora:</label>
             <input type="time" name="hora" required>

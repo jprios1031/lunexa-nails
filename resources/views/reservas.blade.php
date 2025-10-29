@@ -36,7 +36,8 @@
 
 
             <label>Hora:</label>
-            <input type="time" name="hora" required>
+            <input type="time" name="hora" step="3600" required>
+
 
             <button type="submit" style="margin-top:10px;">Reservar</button>
         </form>

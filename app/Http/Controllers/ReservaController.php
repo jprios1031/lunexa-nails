@@ -19,7 +19,6 @@ class ReservaController extends Controller
             'email' => 'required|email',
             'telefono' => 'required',
             'servicio' => 'required',
-            'fecha' => 'required|date',
              'fecha' => 'required|date|after_or_equal:today',
         ]);
 

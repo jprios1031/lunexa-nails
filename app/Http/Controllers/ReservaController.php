@@ -20,7 +20,16 @@ class ReservaController extends Controller
             'telefono' => 'required',
             'servicio' => 'required',
              'fecha' => 'required|date|after_or_equal:today',
-            'hora' => 'required|date_format:H:i',
+            'hora' => [
+                'required',
+                'date_format:H:i',
+                function ($attribute, $value, $fail) {
+                    // Verifica que los minutos sean 00
+                    if (substr($value, -2) !== '00') {
+                        $fail('La hora debe ser en punto (sin minutos).');
+                    }
+                }
+            ],
         ]);
 
         Reserva::create($request->all());

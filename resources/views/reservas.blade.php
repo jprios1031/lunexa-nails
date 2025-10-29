@@ -37,9 +37,12 @@
 
             <label>Hora:</label>
             <input type="time" name="hora" step="3600" required>
-<strong>
-  ⚠️ La hora debe ser en punto (ejemplo: 10:00, 11:00, 12:00).
+            <p>
+                <strong>
+ La hora debe ser en punto (ejemplo: 10:00, 11:00, 12:00)
 </strong>
+            </p>
+
 
             <button type="submit" style="margin-top:10px;">Reservar</button>
         </form>

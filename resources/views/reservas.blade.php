@@ -50,9 +50,13 @@
 
         <!-- Enlace para login del admin -->
      
-        <p style="margin-top:15px; text-align:center;">
-            <a href="{{ route('login') }}"><button style="margin-top:10px;>Acceder como administrador</button></a>
-        </p>
+      <p style="margin-top:15px; text-align:center;">
+    <a href="{{ route('login') }}" 
+       style="display:inline-block; padding:10px 20px; background-color:#007bff; color:white; text-decoration:none; border-radius:5px; border:none; cursor:pointer;">
+       Acceder como administrador
+    </a>
+</p>
+
             
     </div>
 </main>
